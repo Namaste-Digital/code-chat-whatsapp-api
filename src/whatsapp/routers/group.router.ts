@@ -86,7 +86,7 @@ export function GroupRouter(
     .get(routerPath('getGroups'), ...guards, async (req, res) => {
       const response = await groupValidate<GroupJid>({
         request: req,
-        schema: groupJidSchema,
+        schema: null,
         execute: (instance, data) => groupController.findGroupInfo(instance, data),
       });
 
