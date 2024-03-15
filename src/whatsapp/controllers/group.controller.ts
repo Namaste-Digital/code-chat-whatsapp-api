@@ -61,6 +61,10 @@ export class GroupController {
     return await this.waMonitor.waInstances.get(instanceName).findGroup(groupJid);
   }
 
+  public async getGroups({ instanceName }: InstanceDto) {
+    return await this.waMonitor.waInstances.get(instanceName).getGroups();
+  }
+
   public async inviteCode({ instanceName }: InstanceDto, groupJid: GroupJid) {
     return await this.waMonitor.waInstances.get(instanceName).invitationCode(groupJid);
   }
